@@ -21,7 +21,6 @@
     position: absolute;
     z-index: 1;
     font-size: 2rem;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
     padding: 20px;
     color: white;
     font-family: "Courier New", monospace;
@@ -67,14 +66,18 @@
     border: none;
     border-radius: 50px; /* Makes the button rounded */
     cursor: pointer;
-    /* transition: background 0.3s ease-in-out; */
   }
   
   /* Button hover effect */
   .btn:hover {
-    /* background-color: rgb(120, 0, 200); */
     transform: scale(1.2); /* Increase size smoothly */
     transition: transform 0.3s ease-in-out;
   }
   
-  
+  /* -------2nd page---------- */
+
+  .canvas-container {
+    width: 100vw;
+    height: 100vh;
+    background: black;
+  }
