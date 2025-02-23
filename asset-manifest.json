@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/birthday-react/static/css/main.73e8f96f.css",
+    "main.js": "/birthday-react/static/js/main.a8b7f860.js",
+    "index.html": "/birthday-react/index.html",
+    "main.73e8f96f.css.map": "/birthday-react/static/css/main.73e8f96f.css.map",
+    "main.a8b7f860.js.map": "/birthday-react/static/js/main.a8b7f860.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.73e8f96f.css",
+    "static/js/main.a8b7f860.js"
+  ]
+}
