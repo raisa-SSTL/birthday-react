@@ -47,10 +47,10 @@ export default function Background({ onThumbsUpClick }) {
         </p>
         {/* Buttons */}
         <div className="button-container">
-          <button className="btn" onClick={onThumbsUpClick}>👍</button>  
-          <button className="btn" onClick={notify}>👎</button>  
-          <ToastContainer />
+            <button className="btn" onClick={onThumbsUpClick}>👍</button>  
+            <button className="btn" onClick={notify}>👎</button>  
         </div>
+        <ToastContainer />
       </div>
     </div>
   );

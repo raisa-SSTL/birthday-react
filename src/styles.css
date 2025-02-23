@@ -41,8 +41,23 @@
     display: flex;
     justify-content: center;
     gap: 20px; /* Space between buttons */
+    opacity: 0;  /* Initially hidden */
+    transform: translateY(50px); /* Start position slightly below */
+    animation: slideUp 1s ease-in-out forwards;
+    animation-delay: 5s;
   }
-  
+
+  @keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+
   /* Button styling */
   .btn {
     background-color: rgb(0, 0, 0);
