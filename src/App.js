@@ -5,6 +5,7 @@ import Background from './file';
 import React, { useState } from "react";
 import Earth from "./earth";
 import Chat from "./chat";
+import Hbd from "./hbd";
 
 // function App() {
 //   return (
@@ -40,11 +41,16 @@ export default function App() {
     setPage("chat");
   };
 
+  const handleNextClick = () => {
+    setPage("hbd");
+  };
+
   return (
     <div>
       {page === "home" && <Background onThumbsUpClick={handleThumbsUpClick} />}
       {page === "earth" && <Earth onEarthClick={handleEarthClick} />}
-      {page === "chat" && <Chat />}
+      {page === "chat" && <Chat onNextClick={handleNextClick} />}
+      {page === "hbd" && <Hbd />}
     </div>
   );
 }

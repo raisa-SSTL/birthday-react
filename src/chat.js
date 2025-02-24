@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 
-export default function Chat() {
+export default function Chat({onNextClick}) {
 
     const [messages, setMessages] = useState([
         {
@@ -86,7 +86,7 @@ export default function Chat() {
                 )}
                 {showNextButton && !waitingForResponse && (
                     <div className="response-option-next">
-                        <button className="response-btn">Next?</button>
+                        <button className="response-btn" onClick={onNextClick}>Next?</button>
                     </div>
                 )}
             </div>
