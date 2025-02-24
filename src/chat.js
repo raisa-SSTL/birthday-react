@@ -12,6 +12,7 @@ export default function Chat() {
 
     const [showResponses, setShowResponses] = useState(false);
     const [waitingForResponse, setWaitingForResponse] = useState(false);
+    const [showNextButton, setShowNextButton] = useState(false);
 
       useEffect(() => {
         setTimeout(() => {
@@ -31,8 +32,8 @@ export default function Chat() {
               );
             //   Show response options after a short delay
             setTimeout(() => setShowResponses(true), 1000);
-            }, 3000); 
-          }, 10000);
+            }, 2000); 
+          }, 7000);
       }, []);
 
       // Function to handle response selection
@@ -50,20 +51,19 @@ export default function Chat() {
       setMessages((prev) => [...prev, { id: prev.length + 1, text: "Typing...", sender: "bot" }]);
 
       setTimeout(() => {
-        setMessages((prev) =>
-          prev.map((msg) =>
-            msg.text === "Typing..."
-              ? {
-                  id: prev.length + 1,
-                  text: responseText === "aww tnx"
-                    ? "👉👈 🙈 🫶"
-                    : "HAHAHA, never speak to me again 😂",
-                  sender: "bot",
-                }
-              : msg
-          )
-        );
-        setWaitingForResponse(false);
+            setMessages((prev) => [
+                ...prev.filter((msg) => msg.text !== "Typing..."), // Remove the typing message
+                {
+                    id: prev.length + 1,
+                    text: responseText === "aww tnx"
+                        ? "👉👈 🙈 🫶"
+                        : "HAHAHA, never speak to me again 😂",
+                    sender: "bot",
+                },
+            ]);
+            setWaitingForResponse(false);
+            // Show "Next?" button after a short delay
+            setTimeout(() => setShowNextButton(true), 1000);
       }, 2000);
     }, 2000);
   };
@@ -83,6 +83,11 @@ export default function Chat() {
                     <button className="response-btn" onClick={() => handleResponseClick("aww tnx")}>aww tnx</button>
                     <button className="response-btn" onClick={() => handleResponseClick("eww cringe")}>eww cringe</button>
                 </div>
+                )}
+                {showNextButton && !waitingForResponse && (
+                    <div className="response-option-next">
+                        <button className="response-btn">Next?</button>
+                    </div>
                 )}
             </div>
         </div>
