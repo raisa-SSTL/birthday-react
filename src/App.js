@@ -4,6 +4,7 @@ import "./styles.css";
 import Background from './file';
 import React, { useState } from "react";
 import Earth from "./earth";
+import Chat from "./chat";
 
 // function App() {
 //   return (
@@ -29,19 +30,21 @@ import Earth from "./earth";
 
 export default function App() {
 
-  const [earthPage, setEarthPage] = useState(false);
+  const [page, setPage] = useState("home");
 
   const handleThumbsUpClick = () => {
-    setEarthPage(true); // Show the new page when the thumbs-up button is clicked
+    setPage("earth"); 
+  };
+
+  const handleEarthClick = () => {
+    setPage("chat");
   };
 
   return (
     <div>
-      {!earthPage ? (
-        <Background onThumbsUpClick={handleThumbsUpClick} />
-      ) : (
-        <Earth />
-      )}
+      {page === "home" && <Background onThumbsUpClick={handleThumbsUpClick} />}
+      {page === "earth" && <Earth onEarthClick={handleEarthClick} />}
+      {page === "chat" && <Chat />}
     </div>
   );
 }

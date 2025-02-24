@@ -1,10 +1,9 @@
-import React, { useRef, useMemo, useState } from "react";
+import React, { useRef, useMemo } from "react";
 import { Canvas, useFrame, extend } from "@react-three/fiber";
 import { Typewriter } from "react-simple-typewriter";
 import * as THREE from "three";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Chat from "./chat";
 
 // Extend Three.js plane for text labels
 extend({ PlaneGeometry: THREE.PlaneGeometry });
@@ -34,7 +33,7 @@ function TextLabel({ text }) {
   );
 }
 
-function Planet({ position, speed, size, color, name }) {
+function Planet({ position, speed, size, color, name, onPlanetClick }) {
   const groupRef = useRef();
 
   useFrame(({ clock }) => {
@@ -45,7 +44,8 @@ function Planet({ position, speed, size, color, name }) {
 
   const handlePlanetClick = () => {
     if (name === "Earth") {
-      toast(`Earth!`);
+      // toast(`Earth!`);
+      onPlanetClick();
     } else {
       toast(`lmaooo don't kid yourself 😆`); // Show toast for Mercury and Venus
     }
@@ -66,7 +66,7 @@ function Planet({ position, speed, size, color, name }) {
 }
 
 
-export default function Earth() {
+export default function Earth({onEarthClick}) {
 
   return (
     <div className="canvas-container">
@@ -90,7 +90,7 @@ export default function Earth() {
         {/* Three orbiting planets */}
         <Planet position={[2, 0, 0]} speed={0.5} size={0.5} color="grey" name="Mercury"/>
         <Planet position={[3, 0, 0]} speed={0.3} size={0.6} color="orange" name="Venus"/>
-        <Planet position={[4, 0, 0]} speed={0.2} size={0.7} color="blue" name="Earth"/>
+        <Planet position={[4, 0, 0]} speed={0.2} size={0.7} color="blue" name="Earth" onPlanetClick={onEarthClick} />
       </Canvas>
       <ToastContainer />
     </div>
