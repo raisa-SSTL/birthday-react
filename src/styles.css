@@ -122,6 +122,12 @@
   align-self: flex-start;
 }
 
+.user {
+  background: #c953e1;
+  align-self: flex-end;
+  color: white;
+}
+
 .response-options {
   display: flex;
   gap: 10px;

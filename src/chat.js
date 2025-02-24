@@ -11,6 +11,7 @@ export default function Chat() {
     ]);
 
     const [showResponses, setShowResponses] = useState(false);
+    const [waitingForResponse, setWaitingForResponse] = useState(false);
 
       useEffect(() => {
         setTimeout(() => {
@@ -30,9 +31,43 @@ export default function Chat() {
               );
             //   Show response options after a short delay
             setTimeout(() => setShowResponses(true), 1000);
-            }, 4000); 
+            }, 3000); 
           }, 10000);
       }, []);
+
+      // Function to handle response selection
+  const handleResponseClick = (responseText) => {
+    setMessages((prev) => [
+      ...prev,
+      { id: prev.length + 1, text: responseText, sender: "user" },
+    ]);
+
+    setShowResponses(false); // Hide response options after selection
+    setWaitingForResponse(true); // Wait before bot sends another message
+
+    // Trigger bot's third message based on user response
+    setTimeout(() => {
+      setMessages((prev) => [...prev, { id: prev.length + 1, text: "Typing...", sender: "bot" }]);
+
+      setTimeout(() => {
+        setMessages((prev) =>
+          prev.map((msg) =>
+            msg.text === "Typing..."
+              ? {
+                  id: prev.length + 1,
+                  text: responseText === "aww tnx"
+                    ? "👉👈 🙈 🫶"
+                    : "HAHAHA, never speak to me again 😂",
+                  sender: "bot",
+                }
+              : msg
+          )
+        );
+        setWaitingForResponse(false);
+      }, 2000);
+    }, 2000);
+  };
+
 
     return(
         <div className="chat-container">
@@ -45,8 +80,8 @@ export default function Chat() {
                 {/* Response options appear after the second message */}
                 {showResponses && (
                 <div className="response-options">
-                    <button className="response-btn">aww tnx</button>
-                    <button className="response-btn">eww cringe</button>
+                    <button className="response-btn" onClick={() => handleResponseClick("aww tnx")}>aww tnx</button>
+                    <button className="response-btn" onClick={() => handleResponseClick("eww cringe")}>eww cringe</button>
                 </div>
                 )}
             </div>
