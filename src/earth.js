@@ -1,26 +1,10 @@
-import React, { useRef, useMemo } from "react";
+import React, { useRef, useMemo, useState } from "react";
 import { Canvas, useFrame, extend } from "@react-three/fiber";
 import { Typewriter } from "react-simple-typewriter";
 import * as THREE from "three";
-
-// Component for a rotating planet
-// function Planet({ position, speed, size, color }) {
-//   const planetRef = useRef();
-
-//   useFrame(({ clock }) => {
-//     planetRef.current.position.x =
-//       position[0] * Math.cos(clock.getElapsedTime() * speed);
-//     planetRef.current.position.z =
-//       position[0] * Math.sin(clock.getElapsedTime() * speed);
-//   });
-
-//   return (
-//     <mesh ref={planetRef} position={position}>
-//       <sphereGeometry args={[size, 32, 32]} />
-//       <meshStandardMaterial color={color} />
-//     </mesh>
-//   );
-// }
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Chat from "./chat";
 
 // Extend Three.js plane for text labels
 extend({ PlaneGeometry: THREE.PlaneGeometry });
@@ -59,10 +43,18 @@ function Planet({ position, speed, size, color, name }) {
     groupRef.current.position.z = position[0] * Math.sin(elapsed);
   });
 
+  const handlePlanetClick = () => {
+    if (name === "Earth") {
+      toast(`Earth!`);
+    } else {
+      toast(`lmaooo don't kid yourself 😆`); // Show toast for Mercury and Venus
+    }
+  };
+
   return (
     <group ref={groupRef} position={position}>
       {/* Planet Sphere */}
-      <mesh>
+      <mesh onPointerDown={handlePlanetClick}>
         <sphereGeometry args={[size, 32, 32]} />
         <meshStandardMaterial color={color} />
       </mesh>
@@ -75,6 +67,7 @@ function Planet({ position, speed, size, color, name }) {
 
 
 export default function Earth() {
+
   return (
     <div className="canvas-container">
       {/* Sliding Text */}
@@ -99,6 +92,7 @@ export default function Earth() {
         <Planet position={[3, 0, 0]} speed={0.3} size={0.6} color="orange" name="Venus"/>
         <Planet position={[4, 0, 0]} speed={0.2} size={0.7} color="blue" name="Earth"/>
       </Canvas>
+      <ToastContainer />
     </div>
   );
 }

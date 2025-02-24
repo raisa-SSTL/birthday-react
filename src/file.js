@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export default function Background({ onThumbsUpClick }) {
 
-  const notify = () => toast("Think again, dumbass 🙄");
+  const notify = () => toast("think again, dumbass 🙄");
 
   return (
 

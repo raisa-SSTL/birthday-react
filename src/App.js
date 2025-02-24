@@ -35,7 +35,6 @@ export default function App() {
     setEarthPage(true); // Show the new page when the thumbs-up button is clicked
   };
 
-  // return <Background />;
   return (
     <div>
       {!earthPage ? (
