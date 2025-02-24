@@ -172,3 +172,29 @@
   animation: fadeIn 1s ease-in-out forwards;
 }
 
+/* -------4th page---------- */
+
+.hbd-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  background: url("https://i.pinimg.com/originals/3e/ef/cc/3eefcc1339b0241ebaf1c144cadeb632.gif") center/cover no-repeat; 
+}
+
+.text-box {
+  width: 20%;
+  height: 40%;
+  background: rgba(227, 222, 222, 0.943); /* Slight transparency */
+  border-radius: 50%;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  text-align: center; /* Ensure text itself is centered */
+  margin-right: 20px;
+  font-size: 1.5rem;
+}

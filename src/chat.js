@@ -86,7 +86,7 @@ export default function Chat({onNextClick}) {
                 )}
                 {showNextButton && !waitingForResponse && (
                     <div className="response-option-next">
-                        <button className="response-btn" onClick={onNextClick}>Next?</button>
+                        <button className="response-btn" onClick={onNextClick}>Proceed</button>
                     </div>
                 )}
             </div>
