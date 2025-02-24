@@ -90,9 +90,70 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white; /* Text color */
-  font-size: 2rem;
+  /* color: white; Text color */
+  /* font-size: 2rem;
   font-weight: bold;
-  text-shadow: 2px 2px 5px black;
+  text-shadow: 2px 2px 5px black; */
   background: url("https://i.pinimg.com/originals/a6/66/c0/a666c011c80315ad3c3a49b8e7d2ba06.gif") center/cover no-repeat; /* Replace with your GIF URL */
 }
+
+.chat-box {
+  width: 70%;
+  height: 80%;
+  background: rgba(255, 255, 255, 0.2); /* Slight transparency */
+  border-radius: 10px;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-bubble {
+  max-width: 70%;
+  padding: 10px 15px;
+  margin: 5px 0;
+  border-radius: 20px;
+  font-size: 1.3rem;
+  display: inline-block;
+}
+
+.bot {
+  background: #f1f0f0;
+  align-self: flex-start;
+}
+
+.response-options {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 200px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.response-btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  background: #c953e1;
+  color: white;
+}
+
+.response-btn:hover {
+  transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
