@@ -81,3 +81,18 @@
     height: 100vh;
     background: black;
   }
+
+ /* -------3nd page---------- */
+
+ .chat-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white; /* Text color */
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px black;
+  background: url("https://i.pinimg.com/originals/a6/66/c0/a666c011c80315ad3c3a49b8e7d2ba06.gif") center/cover no-repeat; /* Replace with your GIF URL */
+}
