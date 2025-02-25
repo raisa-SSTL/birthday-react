@@ -198,3 +198,114 @@
   margin-right: 20px;
   font-size: 1.5rem;
 }
+
+/* -------5th page---------- */
+
+.decrypt-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align text to the left */
+  justify-content: flex-start; /* Start from the top */
+  padding: 50px; /* Add some spacing from the left */
+  text-align: left;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+
+  background: linear-gradient(270deg, #c979ec, #b83ef0, #be07be, #8e58f3);
+  background-size: 400% 400%;
+  animation: gradientAnimation 6s ease infinite;
+}
+
+/* Keyframes for background animation */
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Text animations */
+.decrypt-container h1 {
+  opacity: 0;
+  transform: translateY(70px);
+  animation: fadeSlideUp 0.3s ease-out forwards;
+  margin: 5px 0; /* Adjust top and bottom spacing */
+  line-height: 1.2;
+  font-family: "Poppins", serif;
+}
+
+.decrypt-container h1:nth-child(1) {
+  animation-delay: 1s; /* First h1 appears immediately */
+}
+
+.decrypt-container h1:nth-child(2) {
+  animation-delay: 2s; /* Second h1 appears after 1s */
+}
+
+.decrypt-container h1:nth-child(3) {
+  animation-delay: 3s; /* Third h1 appears after 2s */
+}
+
+/* Center the 4th h1 */
+.decrypt-container h1:nth-child(4) {
+  align-self: center; /* Center this text */
+  animation-delay: 4s;
+  color: rgb(82, 7, 92);
+  font-size: 3rem;
+}
+
+/* Keyframes for text fade+slide-up animation */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Text input styling */
+.decrypt-input {
+  align-self: center;
+  margin-top: 50px;
+  width: 300px;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  text-align: center;
+  outline: none;
+}
+
+/* Submit button styling */
+.decrypt-button {
+  align-self: center;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #ff7eb3, #ff758c);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.decrypt-button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #ff758c, #ff7eb3);
+}
+
+/* Hint Text (Hidden by default) */
+.hint-text {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #fff3b0;
+  animation: fadeIn 0.5s ease-in-out;
+}

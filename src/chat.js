@@ -5,7 +5,7 @@ export default function Chat({onNextClick}) {
     const [messages, setMessages] = useState([
         {
           id: 1,
-          text: "7 continents, over 190 countries, 8 billion people around the world and I had the privilege of knowing you. I must be God's favorite. It's close to impossible to describe the impact you have on the lives of people around you, but I'll still give it a try.",
+          text: "7 continents, over 190 countries, 8 billion people around the world and I have the privilege of knowing you. I must be God's favorite. It's close to impossible to describe the impact you have on the lives of people around you, but I'll still give it a try.",
           sender: "bot",
         },
     ]);

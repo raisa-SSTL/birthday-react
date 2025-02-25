@@ -6,6 +6,7 @@ import React, { useState } from "react";
 import Earth from "./earth";
 import Chat from "./chat";
 import Hbd from "./hbd";
+import Decrypt from "./decrypt";
 
 // function App() {
 //   return (
@@ -31,7 +32,12 @@ import Hbd from "./hbd";
 
 export default function App() {
 
-  const [page, setPage] = useState("home");
+  // const [page, setPage] = useState("home");
+  const [page, setPage] = useState("decrypt");
+
+  const handleDecryptClick = () => {
+    setPage("home"); 
+  };
 
   const handleThumbsUpClick = () => {
     setPage("earth"); 
@@ -47,6 +53,7 @@ export default function App() {
 
   return (
     <div>
+      {page === "decrypt" && <Decrypt onSubmit={handleDecryptClick} />}
       {page === "home" && <Background onThumbsUpClick={handleThumbsUpClick} />}
       {page === "earth" && <Earth onEarthClick={handleEarthClick} />}
       {page === "chat" && <Chat onNextClick={handleNextClick} />}
