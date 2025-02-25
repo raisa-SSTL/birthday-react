@@ -1,5 +1,6 @@
 import React, {useEffect} from "react";
 import confetti from "canvas-confetti";
+import { Typewriter } from "react-simple-typewriter";
 
 export default function Hbd() {
 
@@ -31,7 +32,14 @@ export default function Hbd() {
     return(
         <div className="hbd-container">
             <div className="text-box">
-            お誕生日おめでとう、愛。誕生日はあと2999人しか残っていない。愛してます。
+            {/* お誕生日おめでとう、愛。誕生日はあと2999人しか残っていない。愛してます。 */}
+                <Typewriter
+                            words={["お誕生日おめでとう、愛。誕生日はあと2999人しか残っていない。愛してます。"]}
+                            loop={1}
+                            typeSpeed={100}
+                            deleteSpeed={50}
+                            cursor
+                />
             </div>        
         </div>
     );
