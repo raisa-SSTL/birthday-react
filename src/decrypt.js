@@ -24,7 +24,7 @@ export default function Decrypt({onSubmit}) {
             <h1>Hey, Rafid</h1>
             <h1>Here's a challenge for you 😈</h1>
             <h1>Decrypt this message: </h1>
-            <h1>omqju</h1>
+            <h1>rnrkp</h1>
             {/* Input Field */}
             <input 
                 type="text" 
@@ -41,8 +41,8 @@ export default function Decrypt({onSubmit}) {
             {/* Hint Message */}
             {showHint && <p className="hint-text">
                 <ul>
-                    <li>shift consonants backward by 2 places</li>
-                    <li>exchange the vowels (E→A, I→E, O→I, U→O, A→U)</li>
+                    <li>shift consonants backward by 3 places</li>
+                    <li>exchange the letters (M→S, O→I)</li>
                     <li>reverse the text</li>
                 </ul>
             </p>}
